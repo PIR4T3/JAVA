@@ -4,20 +4,27 @@
  */
 
 class Repeat{
-   public static void main(String[] args) {
-      int num;
-      num = Integer.parseInt(args[0]);
-      int []arr = new int[10];
-      int i;
-      int rem;
-      while(num>0){
-         rem = num%10;
-         arr[rem]++;
-         num /= 10;      
-      }  
-      for(i=0;i<arr.length;i++){
-         if(arr[i]==1)
-            System.out.print(i+" ");
+      public void check(int num){
+            int []arr = new int[10];
+            int i;
+            int rem;
+            while(num>0){
+               rem = num%10;
+               arr[rem]++;
+               num /= 10;      
+            }  
+            for(i=0;i<arr.length;i++){
+               if(arr[i]==1)
+                  System.out.print(i+" ");
+            }
+
       }
-   }
+}
+class Main{
+      public static void main(String[] args) {
+         int num;
+         num = Integer.parseInt(args[0]);
+         Repeat r = new Repeat();
+         r.check(num);
+      }
 }

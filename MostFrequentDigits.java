@@ -6,13 +6,8 @@
  */
 
 class MostFrequentDigit{
-   public static void main(String[] args) {
-      int no = Integer.parseInt(args[0]);
+   public void digit(int no, int num[]) {
       int arr[] = new int[10];
-      int num[] = new int[10];
-      for(int i=0;i<no;i++){
-         num[i] = Integer.parseInt(args[i+1]);
-      }
       for(int i=0;i<no;i++){
          arr[num[i]]++;
       }
@@ -24,5 +19,17 @@ class MostFrequentDigit{
          }
       }
       System.out.println(max_index);
+   }
+}
+
+class Main{
+   public static void main(String[] args) {
+      int no = Integer.parseInt(args[0]);
+      int num[] = new int[10];
+      for(int i=0;i<no;i++){
+         num[i] = Integer.parseInt(args[i+1]);
+      }
+      MostFrequentDigit m = new MostFrequentDigit();
+      m.digit(no, num);
    }
 }

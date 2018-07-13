@@ -6,15 +6,14 @@
  */
 
 class Concatenate{
-   public static void main(String[] args) {
+   public void concatenate(String str, int k) {
       char arr[] = new char[30];
       char temp;
       int count=1, flag=0,z;
-      int n = args[0].length();
-      int k = Integer.parseInt(args[1]);
+      int n = str.length();
 
       for(int i=0;i<n;i++){
-         arr[i] = args[0].charAt(i);
+         arr[i] = str.charAt(i);
       }
       for(int i=0;i<n;i++){
          for(int j=0;j<n-i-1;j++){
@@ -48,5 +47,14 @@ class Concatenate{
             }
          }
       }
+   }
+}
+
+class Main{
+   public static void main(String[] args) {
+      String str = args[0];
+      int k = Integer.parseInt(args[1]);
+      Concatenate c = new Concatenate();
+      c.concatenate(str, k);
    }
 }
